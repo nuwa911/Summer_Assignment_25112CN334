@@ -1,0 +1,13 @@
+//Question 3. Factorial of a given number 
+ 
+#include<stdio.h>
+ int main(){
+ int n;
+ printf("Enter the value of n : ");
+ scanf("%d",&n);
+ int product = 1;
+ for(int i=1; i<=n; i++){
+ product  = product * i;}
+ printf("Factorial of a given number %d is %d",n,product);
+ return 0;
+ } 
