@@ -1,0 +1,14 @@
+// Product of a digit
+
+#include<stdio.h>
+int main(){
+int n,p=1;
+printf("Enter the number : ");
+scanf("%d",&n);
+while(n>0){
+p*=n%10;
+n/=10;
+}
+printf("%d",p);
+return 0;
+}
