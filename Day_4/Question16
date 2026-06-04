@@ -1,0 +1,18 @@
+//Check Armstrong Number
+
+#include<stdio.h>
+int main(){
+int n,t,s=0,r;
+scanf("%d",&n);
+t=n;
+while(n>0){
+r=n%10;
+s=s+r*r*r;
+n/=10;
+}
+if(s==t)
+printf("Armstrong");
+else
+printf("Not Armstrong");
+return 0;
+}
