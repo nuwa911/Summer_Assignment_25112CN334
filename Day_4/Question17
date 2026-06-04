@@ -1,0 +1,19 @@
+//Print Armstrong Numbers in a Range
+
+#include<stdio.h>
+int main(){
+int a,b,i,n,r,s;
+scanf("%d%d",&a,&b);
+for(i=a;i<=b;i++){
+n=i;
+s=0;
+while(n>0){
+r=n%10;
+s=s+r*r*r;
+n/=10;
+}
+if(s==i)
+printf("%d ",i);
+}
+return 0;
+}
