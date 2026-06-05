@@ -1,0 +1,21 @@
+//Check Strong Number
+
+#include<stdio.h>
+int main(){
+int n,t,r,s=0,i,f;
+scanf("%d",&n);
+t=n;
+while(n>0){
+r=n%10;
+f=1;
+for(i=1;i<=r;i++)
+f*=i;
+s+=f;
+n/=10;
+}
+if(s==t)
+printf("Strong");
+else
+printf("Not Strong");
+return 0;
+}
