@@ -1,0 +1,13 @@
+//Count Set Bits in a Number
+
+#include<stdio.h>
+int main(){
+int n,c=0;
+scanf("%d",&n);
+while(n>0){
+c+=n&1;
+n>>=1;
+}
+printf("%d",c);
+return 0;
+}
