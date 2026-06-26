@@ -1,0 +1,24 @@
+//ATM Simulation
+
+#include<stdio.h>
+int main(){
+int ch,amt,bal=10000;
+scanf("%d",&ch);
+if(ch==1)
+printf("%d",bal);
+else if(ch==2){
+scanf("%d",&amt);
+if(amt<=bal){
+bal-=amt;
+printf("%d",bal);
+}
+else
+printf("Insufficient Balance");
+}
+else if(ch==3){
+scanf("%d",&amt);
+bal+=amt;
+printf("%d",bal);
+}
+return 0;
+}
