@@ -1,0 +1,19 @@
+//Quiz Application
+
+#include<stdio.h>
+int main(){
+char a;
+int s=0;
+printf("Capital of India?\n");
+printf("A.Delhi B.Mumbai C.Kolkata D.Chennai\n");
+scanf(" %c",&a);
+if(a=='A'||a=='a')
+s++;
+printf("2+2=?\n");
+printf("A.3 B.4 C.5 D.6\n");
+scanf(" %c",&a);
+if(a=='B'||a=='b')
+s++;
+printf("Score=%d",s);
+return 0;
+}
