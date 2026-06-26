@@ -1,0 +1,16 @@
+//Number Guessing Game
+
+#include<stdio.h>
+int main(){
+int n=25,g;
+do{
+scanf("%d",&g);
+if(g<n)
+printf("Too Low\n");
+else if(g>n)
+printf("Too High\n");
+else
+printf("Correct");
+}while(g!=n);
+return 0;
+}
