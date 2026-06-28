@@ -1,0 +1,13 @@
+//Contact Management System
+
+#include<stdio.h>
+struct contact{
+char name[50];
+char phone[15];
+};
+int main(){
+struct contact c;
+scanf("%s%s",c.name,c.phone);
+printf("%s\n%s",c.name,c.phone);
+return 0;
+}
