@@ -1,0 +1,25 @@
+//Bank Account System
+
+#include<stdio.h>
+int main(){
+int ch;
+float bal=1000,amt;
+scanf("%d",&ch);
+if(ch==1)
+printf("%.2f",bal);
+else if(ch==2){
+scanf("%f",&amt);
+bal+=amt;
+printf("%.2f",bal);
+}
+else if(ch==3){
+scanf("%f",&amt);
+if(amt<=bal){
+bal-=amt;
+printf("%.2f",bal);
+}
+else
+printf("Insufficient Balance");
+}
+return 0;
+}
