@@ -1,0 +1,10 @@
+//Ticket Booking System
+
+#include<stdio.h>
+int main(){
+int seats;
+float price=200;
+scanf("%d",&seats);
+printf("Total=%.2f",seats*price);
+return 0;
+}
