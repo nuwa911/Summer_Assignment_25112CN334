@@ -1,0 +1,13 @@
+//Library Management System
+
+#include<stdio.h>
+struct book{
+int id;
+char name[50];
+};
+int main(){
+struct book b;
+scanf("%d%s",&b.id,b.name);
+printf("%d\n%s",b.id,b.name);
+return 0;
+}
