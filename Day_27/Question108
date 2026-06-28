@@ -1,0 +1,17 @@
+//Marksheet Generation System
+
+#include<stdio.h>
+int main(){
+char name[50];
+int m1,m2,m3,total;
+float per;
+scanf("%s%d%d%d",name,&m1,&m2,&m3);
+total=m1+m2+m3;
+per=total/3.0;
+printf("%s\n%d\n%.2f\n",name,total,per);
+if(per>=40)
+printf("Pass");
+else
+printf("Fail");
+return 0;
+}
