@@ -1,0 +1,14 @@
+//Student Record Management System
+
+#include<stdio.h>
+struct student{
+int roll;
+char name[50];
+float marks;
+};
+int main(){
+struct student s;
+scanf("%d%s%f",&s.roll,s.name,&s.marks);
+printf("%d\n%s\n%.2f",s.roll,s.name,s.marks);
+return 0;
+}
