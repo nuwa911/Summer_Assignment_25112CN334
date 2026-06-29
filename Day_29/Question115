@@ -1,0 +1,17 @@
+//Menu-Driven String Operations
+
+#include<stdio.h>
+#include<string.h>
+int main(){
+char s[100];
+int ch;
+scanf("%s",s);
+scanf("%d",&ch);
+switch(ch){
+case 1:printf("%lu",strlen(s));break;
+case 2:strrev(s);printf("%s",s);break;
+case 3:strupr(s);printf("%s",s);break;
+default:printf("Invalid");
+}
+return 0;
+}
