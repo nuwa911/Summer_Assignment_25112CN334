@@ -1,0 +1,13 @@
+//Inventory Management System
+
+#include<stdio.h>
+struct item{
+int id,qty;
+char name[50];
+};
+int main(){
+struct item i;
+scanf("%d%s%d",&i.id,i.name,&i.qty);
+printf("%d\n%s\n%d",i.id,i.name,i.qty);
+return 0;
+}
