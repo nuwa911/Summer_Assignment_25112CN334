@@ -1,0 +1,231 @@
+/*=========================================================
+            TEXT ANALYZER USING ARRAYS, STRINGS & FUNCTIONS
+=========================================================*/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void inputString(char str[]);
+void displayString(char str[]);
+void countCharacters(char str[]);
+void countWords(char str[]);
+void countVowels(char str[]);
+void countConsonants(char str[]);
+void reverseString(char str[]);
+void palindrome(char str[]);
+void characterFrequency(char str[]);
+
+int main()
+{
+    char str[500];
+    int choice;
+
+    inputString(str);
+
+    do
+    {
+        printf("\n====================================");
+        printf("\n        TEXT ANALYZER MENU");
+        printf("\n====================================");
+        printf("\n1. Enter New String");
+        printf("\n2. Display String");
+        printf("\n3. Count Characters");
+        printf("\n4. Count Words");
+        printf("\n5. Count Vowels");
+        printf("\n6. Count Consonants");
+        printf("\n7. Reverse String");
+        printf("\n8. Check Palindrome");
+        printf("\n9. Character Frequency");
+        printf("\n10. Exit");
+
+        printf("\n\nEnter your choice: ");
+        scanf("%d", &choice);
+        getchar();
+
+        switch(choice)
+        {
+            case 1:
+                inputString(str);
+                break;
+
+            case 2:
+                displayString(str);
+                break;
+
+            case 3:
+                countCharacters(str);
+                break;
+
+            case 4:
+                countWords(str);
+                break;
+
+            case 5:
+                countVowels(str);
+                break;
+
+            case 6:
+                countConsonants(str);
+                break;
+
+            case 7:
+                reverseString(str);
+                break;
+
+            case 8:
+                palindrome(str);
+                break;
+
+            case 9:
+                characterFrequency(str);
+                break;
+
+            case 10:
+                printf("\nThank You!\n");
+                break;
+
+            default:
+                printf("\nInvalid Choice!\n");
+        }
+
+    } while(choice != 10);
+
+    return 0;
+}
+
+void inputString(char str[])
+{
+    printf("\nEnter a String: ");
+    gets(str);
+}
+
+void displayString(char str[])
+{
+    printf("\nString: %s\n", str);
+}
+
+void countCharacters(char str[])
+{
+    printf("\nTotal Characters = %d\n", strlen(str));
+}
+
+void countWords(char str[])
+{
+    int i, words = 0;
+
+    if(strlen(str) == 0)
+    {
+        printf("\nWords = 0\n");
+        return;
+    }
+
+    words = 1;
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == ' ')
+            words++;
+    }
+
+    printf("\nTotal Words = %d\n", words);
+}
+
+void countVowels(char str[])
+{
+    int i, count = 0;
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        char ch = tolower(str[i]);
+
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+            count++;
+    }
+
+    printf("\nTotal Vowels = %d\n", count);
+}
+
+void countConsonants(char str[])
+{
+    int i, count = 0;
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        char ch = tolower(str[i]);
+
+        if(ch>='a' && ch<='z')
+        {
+            if(!(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'))
+                count++;
+        }
+    }
+
+    printf("\nTotal Consonants = %d\n", count);
+}
+
+void reverseString(char str[])
+{
+    char rev[500];
+    int i, j;
+
+    j = 0;
+
+    for(i = strlen(str)-1; i>=0; i--)
+    {
+        rev[j] = str[i];
+        j++;
+    }
+
+    rev[j] = '\0';
+
+    printf("\nReversed String = %s\n", rev);
+}
+
+void palindrome(char str[])
+{
+    char temp[500];
+    char rev[500];
+    int i, j;
+
+    strcpy(temp, str);
+
+    for(i=0; temp[i]!='\0'; i++)
+        temp[i]=tolower(temp[i]);
+
+    j=0;
+
+    for(i=strlen(temp)-1; i>=0; i--)
+    {
+        rev[j]=temp[i];
+        j++;
+    }
+
+    rev[j]='\0';
+
+    if(strcmp(temp,rev)==0)
+        printf("\nThe String is a Palindrome.\n");
+    else
+        printf("\nThe String is NOT a Palindrome.\n");
+}
+
+void characterFrequency(char str[])
+{
+    int freq[256]={0};
+    int i;
+
+    for(i=0; str[i]!='\0'; i++)
+    {
+        freq[(unsigned char)str[i]]++;
+    }
+
+    printf("\nCharacter Frequency:\n");
+
+    for(i=0;i<256;i++)
+    {
+        if(freq[i]!=0)
+        {
+            printf("%c = %d\n",i,freq[i]);
+        }
+    }
+}
